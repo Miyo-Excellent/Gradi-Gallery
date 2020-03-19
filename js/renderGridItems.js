@@ -39,25 +39,23 @@ window.onload = function() {
     });
   };
 
-  const items = $.getJSON("../api/gradiAuthors.json", (gradiAuthors = []) => {
-    window.addEventListener("scroll", scrollEvent => {
-      const itemsDom = document.querySelectorAll(".list .item");
+  window.addEventListener("scroll", scrollEvent => {
+    const itemsDom = document.querySelectorAll(".list .item");
 
-      for (const itemDom of itemsDom) {
-        const rect = itemDom.getBoundingClientRect();
-        const isHidden =
-          window.scrollY >= rect.top
-            ? rect.top - rect.height * 0.5 >= window.scrollY
-            : false;
+    for (const itemDom of itemsDom) {
+      const rect = itemDom.getBoundingClientRect();
+      const isHidden =
+        window.scrollY >= rect.top
+          ? rect.top - rect.height * 0.5 >= window.scrollY
+          : false;
 
-        itemDom.style.visibility = isHidden ? "hidden" : "visible";
-      }
-    });
-
-    gridList.innerHTML = "";
-
-    renderItems(gradiAuthors);
-
-    initGrid();
+      itemDom.style.visibility = isHidden ? "hidden" : "visible";
+    }
   });
+
+  gridList.innerHTML = "";
+
+  renderItems(gradiAuthors);
+
+  initGrid();
 };
