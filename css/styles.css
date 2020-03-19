@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Baloo Chettan 2", cursive;
+}
+
+body {
+  background: white;
+  margin: 0;
+  padding: 10px 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+body .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+  margin: 0 0 50px 0;
+}
+body .header .logo {
+  background: white;
+  width: 100%;
+  height: 100px;
+  padding: 0 20px;
+}
+body .header .logo .image {
+  max-width: 100%;
+}
+body .content {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+body .content .list {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: 100px;
+  padding: 10px;
+  list-style-type: none;
+}
+body .content .list .item {
+  transform: skewY(-10deg);
+  height: 100px;
+  display: block;
+}
+body .content .list .item:hover .content .information {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+body .content .list .item:hover .content .cover {
+  display: none;
+}
+body .content .list .item .content {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+body .content .list .item .content .information,
+body .content .list .item .content .cover {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+body .content .list .item .content .information {
+  display: none;
+  background: #00d664;
+  padding: 20px;
+}
+body .content .list .item .content .information .tag {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+body .content .list .item .content .information .tag .text {
+  font-size: 28px;
+  color: white;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.57);
+  font-weight: bold;
+}
+body .content .list .item .content .information .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+body .content .list .item .content .information .logo .image {
+  width: 90px;
+}
+body .content .list .item .content .information .name {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+body .content .list .item .content .information .name .text {
+  font-size: 18px;
+  color: white;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.57);
+  font-weight: bold;
+}
+body .content .list .item .content .cover .image {
+  display: block;
+  min-width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+}
